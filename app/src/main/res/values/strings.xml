@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CRUD</string>
+    <string name="input_data_mahasiswa">INPUT DATA MAHASISWA</string>
+    <string name="npm">NPM:</string>
+    <string name="nama">NAMA:</string>
+    <string name="masukan_npm">Masukan NPM</string>
+    <string name="masukan_nama">Masukan Nama</string>
+    <string name="input_data">INPUT DATA</string>
+</resources>
