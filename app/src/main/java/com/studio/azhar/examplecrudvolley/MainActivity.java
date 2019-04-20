@@ -1,5 +1,6 @@
 package com.studio.azhar.examplecrudvolley;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     EditText npm, nama;
-    Button btnInput;
+    Button btnInput, btnLihat;
 
     final String INPUT_URL = "http://192.168.167.1/MateriCRUD/insert.php";
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         npm = findViewById(R.id.editNpm);
         nama = findViewById(R.id.ediNama);
         btnInput = findViewById(R.id.btnInput);
+        btnLihat = findViewById(R.id.btnLihat);
+
 
 
 
@@ -41,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputData();
+            }
+        });
+
+        btnLihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListMahasiswa.class);
+                startActivity(intent);
             }
         });
     }
