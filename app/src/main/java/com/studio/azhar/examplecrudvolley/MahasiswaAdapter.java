@@ -1,6 +1,7 @@
 package com.studio.azhar.examplecrudvolley;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -34,7 +35,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(MahasiswaAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(MahasiswaAdapter.ViewHolder holder, final int position) {
         final ModelMahasiswa modelMahasiswa = modelMahasiswas.get(position);
         holder.id.setText(modelMahasiswa.getId());
         holder.npm.setText(modelMahasiswa.getNpm());
@@ -43,7 +44,10 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.View
         holder.linearCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ModelMahasiswa modelMahasiswa1 = modelMahasiswas.get(position);
+                Intent intent = new Intent(view.getContext(),UpdateDeleteActivity.class);
+                intent.putExtra(KEY_ID, modelMahasiswa1.getId());
+                view.getContext().startActivity(intent);
             }
         });
     }
